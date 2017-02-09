@@ -1,6 +1,13 @@
 import React from "react";
 
 export default class Draft extends React.Component {
+sendMessage ( event ) {
+	event.prevent();
+
+	browserHistory.push( "/inbox" );
+}
+
+
 	render() {
 		const styles = this.getStyles();
 
@@ -38,7 +45,7 @@ export default class Draft extends React.Component {
 						style={ styles.draft }
 					/>
 
-					<button style={ styles.sendButton }>
+					<button onClick={ this.sendMessage } style={ styles.sendButton }>
 						Send
 					</button>
 				</form>
@@ -48,30 +55,6 @@ export default class Draft extends React.Component {
 	}
 
 	getStyles() {
-		return {
-			draft: {
-				resize: "none"
-				, width: "100%"
-			}
-			, form: {
-				margin: "0 auto"
-				, width: "90%"
-			}
-			, input: {
-				border: "1px solid #e0e0e0"
-				, borderRadius: 3
-				, height: 28
-				, marginBottom: 5
-				, width: "100%"
-			}
-			, sendButton: {
-				backgroundColor: "#00d8ff"
-				, border: "1px solid #e0e0e0"
-				, color: "white"
-				, fontWeight: "bold"
-				, height: 40
-				, width: 100
-			}
-		}
+		return { /* */ }
 	}
 }
